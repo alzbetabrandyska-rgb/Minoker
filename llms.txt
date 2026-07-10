@@ -1,0 +1,12 @@
+# Minoker
+
+> Minoker je hardrock-thrash metalová kapela z Boskovic, založená v roce 2021 Michaelem Keršnerem a jeho synem Norbertem Keršnerem. Web představuje kapelu, členy, chystané singly, fotogalerii a kontakt.
+
+## Stránky
+
+- [Domů](https://minoker.cz/): Hero fotka, o kapele, členové (Michael a Norbert Keršner), připravované singly, fotogalerie, časté otázky a kontaktní formulář.
+- [Aktuality](https://minoker.cz/aktuality): Novinky a dění kolem kapely.
+
+## Kontakt
+
+- E-mail: info@minoker.cz
