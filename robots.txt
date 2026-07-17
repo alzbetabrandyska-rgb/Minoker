@@ -1,5 +1,5 @@
+# DOČASNÉ: web zatím běží na subdoméně minoker.webeli.cz, indexace je vypnutá.
+# Až se web přesune na ostrou doménu minoker.cz, tento soubor nahradit verzí
+# s "Allow: /" a odkazem na sitemap.xml.
 User-agent: *
-Allow: /
-Disallow: /404
-
-Sitemap: https://minoker.cz/sitemap.xml
+Disallow: /

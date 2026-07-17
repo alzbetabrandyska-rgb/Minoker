@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://minoker.cz/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <loc>https://minoker.webeli.cz/</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/"/>
   </url>
   <url>
-    <loc>https://minoker.cz/aktuality</loc>
-    <lastmod>2026-07-02</lastmod>
+    <loc>https://minoker.webeli.cz/aktuality</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/aktuality"/>
+  </url>
+  <url>
+    <loc>https://minoker.webeli.cz/en/</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/"/>
+  </url>
+  <url>
+    <loc>https://minoker.webeli.cz/en/news</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/aktuality"/>
   </url>
 </urlset>

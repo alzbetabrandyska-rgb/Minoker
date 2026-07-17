@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aktuality | Minoker</title>
-  <meta name="description" content="Novinky, koncerty a dění kolem hardrock-thrash metalové kapely Minoker z Boskovic.">
-  <link rel="canonical" href="https://minoker.cz/aktuality">
+  <meta name="description" content="Novinky a dění kolem hardrock-thrash metalové kapely Minoker z Boskovic.">
+  <!-- DOČASNÉ: web běží na subdoméně minoker.webeli.cz — až se přesune na ostrou doménu minoker.cz, tento řádek smazat -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://minoker.webeli.cz/aktuality">
+  <link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/aktuality">
+  <link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/news">
+  <link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/aktuality">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
@@ -18,16 +23,17 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Minoker">
   <meta property="og:title" content="Aktuality | Minoker">
-  <meta property="og:description" content="Novinky, koncerty a dění kolem hardrock-thrash metalové kapely Minoker z Boskovic.">
-  <meta property="og:url" content="https://minoker.cz/aktuality">
-  <meta property="og:image" content="https://minoker.cz/obrazky/herosekce.jpg">
-  <meta property="og:image:width" content="1920">
-  <meta property="og:image:height" content="1076">
+  <meta property="og:description" content="Novinky a dění kolem hardrock-thrash metalové kapely Minoker z Boskovic.">
+  <meta property="og:url" content="https://minoker.webeli.cz/aktuality">
+  <meta property="og:image" content="https://minoker.webeli.cz/obrazky/nahed_soc_site.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="cs_CZ">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Aktuality | Minoker">
-  <meta name="twitter:description" content="Novinky, koncerty a dění kolem hardrock-thrash metalové kapely Minoker z Boskovic.">
-  <meta name="twitter:image" content="https://minoker.cz/obrazky/herosekce.jpg">
+  <meta name="twitter:description" content="Novinky a dění kolem hardrock-thrash metalové kapely Minoker z Boskovic.">
+  <meta name="twitter:image" content="https://minoker.webeli.cz/obrazky/nahed_soc_site.jpg">
 
   <!-- Fonty -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +63,10 @@
           <li><a href="aktuality.html" aria-current="page">Aktuality</a></li>
           <li><a href="index.html#kontakty">Kontakty</a></li>
         </ul>
-        <a class="btn btn--primary nav-cta" href="index.html#kontakty">Kontakt</a>
+        <div class="nav-actions">
+          <a class="lang-switch" href="en/news.html" hreflang="en" lang="en">EN</a>
+          <a class="btn btn--primary nav-cta" href="index.html#kontakty">Kontakt</a>
+        </div>
       </nav>
 
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Otevřít menu">
@@ -73,7 +82,7 @@
         <div class="section-head reveal">
           <p class="eyebrow">Dění v kapele</p>
           <h1 id="aktuality-heading">Aktuality</h1>
-          <p>Koncerty, nahrávání a&nbsp;novinky ze zákulisí kapely Minoker.</p>
+          <p>Nahrávání a&nbsp;novinky ze zákulisí kapely Minoker.</p>
         </div>
 
         <div class="news-list">
@@ -92,7 +101,7 @@
 
         <p class="lede reveal" style="margin-top: var(--space-6);">
           Mezitím se můžete podívat, <a href="index.html#o-kapele">kdo jsme</a>, <a href="index.html#clenove">kdo v&nbsp;kapele hraje</a>,
-          nebo prohlédnout <a href="index.html#galerie">fotogalerii</a> z&nbsp;koncertů.
+          nebo prohlédnout <a href="index.html#galerie">fotogalerii</a>.
         </p>
       </div>
     </section>

@@ -58,6 +58,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -423,8 +425,35 @@ li,
   transform: scaleX(1);
 }
 
-.nav-cta {
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   margin-left: var(--space-2);
+}
+
+.nav-cta {
+  margin-left: 0;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.lang-switch:hover,
+.lang-switch:focus-visible {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .nav-toggle {
@@ -489,10 +518,14 @@ li,
     font-size: 1.25rem;
   }
 
-  .nav-cta {
+  .nav-actions {
     margin-left: 0;
     margin-top: var(--space-2);
     width: 100%;
+  }
+
+  .nav-cta {
+    flex: 1;
   }
 
   .nav-backdrop {
@@ -539,7 +572,7 @@ li,
     gap: var(--space-5);
   }
 
-  .nav-cta {
+  .nav-actions {
     justify-self: end;
     margin-left: 0;
     min-width: 0;
@@ -1083,6 +1116,13 @@ li,
   overflow: hidden;
 }
 
+.faq-question-heading {
+  margin: 0;
+  font-size: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
 .faq-question {
   width: 100%;
   display: flex;
@@ -1422,15 +1462,3 @@ li,
   max-width: 34rem;
 }
 
-/* wa-icon fallback dokud se nenačte web awesome komponenta */
-wa-icon:not(:defined) {
-  display: none;
-}
-
-.fa-fallback-icon {
-  display: none;
-}
-
-wa-icon:not(:defined) ~ .fa-fallback-icon {
-  display: inline-block;
-}

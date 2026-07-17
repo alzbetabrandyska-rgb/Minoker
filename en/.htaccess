@@ -1,0 +1,2 @@
+# Anglická chybová stránka pro tuto podsložku (přepisuje pravidlo z kořene)
+ErrorDocument 404 /en/404.html
