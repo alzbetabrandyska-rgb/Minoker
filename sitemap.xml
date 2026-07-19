@@ -3,38 +3,38 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://minoker.webeli.cz/</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/cs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/"/>
   </url>
   <url>
-    <loc>https://minoker.webeli.cz/aktuality</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://minoker.webeli.cz/news</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/aktuality"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/news"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/cs/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/news"/>
   </url>
   <url>
-    <loc>https://minoker.webeli.cz/en/</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://minoker.webeli.cz/cs/</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/cs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/"/>
   </url>
   <url>
-    <loc>https://minoker.webeli.cz/en/news</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://minoker.webeli.cz/cs/aktuality</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/aktuality"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/news"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/cs/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/news"/>
   </url>
 </urlset>

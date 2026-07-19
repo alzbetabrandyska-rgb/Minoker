@@ -4,27 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aktuality | Minoker</title>
-  <meta name="description" content="Novinky a dění kolem hardrock-thrash metalové kapely Minoker z Boskovic.">
-  <!-- DOČASNÉ: web běží na subdoméně minoker.webeli.cz — až se přesune na ostrou doménu minoker.cz, tento řádek smazat -->
+  <meta name="description" content="Novinky a dění kolem hardrock-thrash metalové kapely Minoker.">
+  <!-- DOČASNÉ: web běží na subdoméně minoker.webeli.cz — až se přesune na ostrou doménu minoker.com, tento řádek smazat -->
   <meta name="robots" content="noindex, nofollow">
-  <link rel="canonical" href="https://minoker.webeli.cz/aktuality">
-  <link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/aktuality">
-  <link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/en/news">
-  <link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/aktuality">
+  <link rel="canonical" href="https://minoker.webeli.cz/cs/aktuality">
+  <link rel="alternate" hreflang="cs" href="https://minoker.webeli.cz/cs/aktuality">
+  <link rel="alternate" hreflang="en" href="https://minoker.webeli.cz/news">
+  <link rel="alternate" hreflang="x-default" href="https://minoker.webeli.cz/news">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
   <meta name="theme-color" content="#121619">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Minoker">
   <meta property="og:title" content="Aktuality | Minoker">
-  <meta property="og:description" content="Novinky a dění kolem hardrock-thrash metalové kapely Minoker z Boskovic.">
-  <meta property="og:url" content="https://minoker.webeli.cz/aktuality">
+  <meta property="og:description" content="Novinky a dění kolem hardrock-thrash metalové kapely Minoker.">
+  <meta property="og:url" content="https://minoker.webeli.cz/cs/aktuality">
   <meta property="og:image" content="https://minoker.webeli.cz/obrazky/nahed_soc_site.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -32,7 +32,7 @@
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Aktuality | Minoker">
-  <meta name="twitter:description" content="Novinky a dění kolem hardrock-thrash metalové kapely Minoker z Boskovic.">
+  <meta name="twitter:description" content="Novinky a dění kolem hardrock-thrash metalové kapely Minoker.">
   <meta name="twitter:image" content="https://minoker.webeli.cz/obrazky/nahed_soc_site.jpg">
 
   <!-- Fonty -->
@@ -43,7 +43,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Přeskočit na obsah</a>
@@ -51,7 +51,7 @@
   <header class="site-header">
     <div class="container">
       <a class="brand" href="index.html" aria-label="Minoker – domů">
-        <img src="logo/logo-bez-pozadi.webp" alt="Minoker" width="1552" height="1123">
+        <img src="../logo/logo-bez-pozadi.webp" alt="Minoker" width="1552" height="1123">
       </a>
 
       <nav class="nav" id="site-nav" aria-label="Hlavní navigace">
@@ -61,11 +61,14 @@
           <li><a href="index.html#pripravujeme">Připravujeme</a></li>
           <li><a href="index.html#galerie">Galerie</a></li>
           <li><a href="aktuality.html" aria-current="page">Aktuality</a></li>
-          <li><a href="index.html#kontakty">Kontakty</a></li>
+          <li><a class="btn btn--primary nav-cta" href="index.html#kontakty">Kontakt</a></li>
         </ul>
         <div class="nav-actions">
-          <a class="lang-switch" href="en/news.html" hreflang="en" lang="en">EN</a>
-          <a class="btn btn--primary nav-cta" href="index.html#kontakty">Kontakt</a>
+          <div class="lang-switch" role="group" aria-label="Jazyk">
+            <a class="lang-switch__link" href="../news.html" hreflang="en" lang="en">EN</a>
+            <span class="lang-switch__divider" aria-hidden="true">/</span>
+            <span class="lang-switch__current" aria-current="true">CZ</span>
+          </div>
         </div>
       </nav>
 
@@ -111,11 +114,11 @@
     <div class="container">
       <div class="footer-bottom">
         <p>© 2026 Minoker. Všechna práva vyhrazena.</p>
-        <p>Vytvořila <a href="https://webeli.cz" target="_blank" rel="noopener">Webeli</a></p>
+        <p><span class="footer-credit-label">Vytvořila</span> <a href="https://webeli.cz" target="_blank" rel="noopener">Webeli</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

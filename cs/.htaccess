@@ -1,0 +1,2 @@
+# Česká chybová stránka pro tuto podsložku (přepisuje pravidlo z kořene)
+ErrorDocument 404 /cs/404.html

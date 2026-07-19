@@ -1,5 +1,14 @@
 # DOČASNÉ: web zatím běží na subdoméně minoker.webeli.cz, indexace je vypnutá.
-# Až se web přesune na ostrou doménu minoker.cz, tento soubor nahradit verzí
+# Až se web přesune na ostrou doménu minoker.com, tento soubor nahradit verzí
 # s "Allow: /" a odkazem na sitemap.xml.
+
+# Výjimka: Facebooku/Instagramu povolujeme scraping, aby fungoval náhled
+# při sdílení odkazu (Sharing Debugger), i když je web jinak neindexovaný.
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
 User-agent: *
 Disallow: /
