@@ -641,7 +641,7 @@ li,
    by centrovaný ořez uřízl "M". Posun doleva ho udrží celé v záběru. */
 @media (min-width: 48rem) and (orientation: landscape) {
   .hero-media img {
-    object-position: 18% 25%;
+    object-position: 10% 25%;
   }
 }
 
