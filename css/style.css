@@ -539,7 +539,8 @@ li,
   }
 
   .nav-cta {
-    flex: 1;
+    font-size: 1rem;
+    padding: 0.55rem 1.25rem;
   }
 
   .nav-backdrop {
@@ -633,6 +634,15 @@ li,
   height: 100%;
   object-fit: cover;
   object-position: center 25%;
+}
+
+/* Širokoúhlá verze fotky (viz shodná podmínka u <source> v HTML) má logo
+   posunuté vůči středu — na méně širokých poměrech stran (tablet na šířku)
+   by centrovaný ořez uřízl "M". Posun doleva ho udrží celé v záběru. */
+@media (min-width: 48rem) and (orientation: landscape) {
+  .hero-media img {
+    object-position: 18% 25%;
+  }
 }
 
 .hero::after {
@@ -1062,6 +1072,12 @@ li,
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-base);
+}
+
+/* Skupinová fotka: ořez posunutý doprava, ať jsou vidět oba členové (bicí jsou
+   plně vidět až po rozkliknutí v lightboxu). */
+.gallery-item img[src*="michael_norbert_galerie"] {
+  object-position: 85% 50%;
 }
 
 .gallery-item:hover img,
