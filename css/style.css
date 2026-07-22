@@ -636,13 +636,9 @@ li,
   object-position: center 25%;
 }
 
-/* Širokoúhlá verze fotky (viz shodná podmínka u <source> v HTML) má logo
-   posunuté vůči středu a blízko horního okraje fotky. Na poměrech stran mezi
-   cca 1.6–1.78 (tablet na šířku, notebooky) by ořez na celou výšku 100vh
-   uřízl "M" a nenechal žádnou mezeru nad logem. Nižší výška heра "přepne"
-   způsob ořezu tak, aby se mírně oříznul jen spodek fotky (nohy), a nahoře
-   tak vznikne rezerva. */
-@media (min-width: 48rem) and (orientation: landscape) {
+/* Jen tablet na šířku (48–85.375rem) — PC/notebooky (nad 85.375rem) tímto
+   pravidlem vůbec neprocházejí a zůstávají na výchozím nastavení výše. */
+@media (min-width: 48rem) and (max-width: 85.375rem) and (orientation: landscape) {
   .hero {
     height: 82vh;
   }
