@@ -637,14 +637,27 @@ li,
 }
 
 /* Jen tablet na šířku (48–85.375rem) — PC/notebooky (nad 85.375rem) tímto
-   pravidlem vůbec neprocházejí a zůstávají na výchozím nastavení výše. */
+   pravidlem vůbec neprocházejí a zůstávají na výchozím nastavení výše.
+   Hero zůstává na celou výšku (100vh, žádný "šev" s další sekcí), ale
+   samotná fotka uvnitř je jen 82vh vysoká a ukotvená nahoře — díky tomu
+   je nad logem mezera. Zbytek pod fotkou vyplní tmavé pozadí shodné s
+   fotkou a jemný gradient dole fotku plynule "rozpustí" do tmy, takže
+   přechod není vidět. */
 @media (min-width: 48rem) and (max-width: 85.375rem) and (orientation: landscape) {
   .hero {
+    background: #121619;
+  }
+
+  .hero-media {
+    top: 0;
+    bottom: auto;
     height: 82vh;
   }
 
   .hero-media img {
     object-position: 8% 0%;
+    -webkit-mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
   }
 }
 
