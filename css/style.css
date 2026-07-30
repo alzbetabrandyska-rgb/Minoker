@@ -636,13 +636,23 @@ li,
   object-position: center 25%;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 22, 25, 0.55) 0%, rgba(18, 22, 25, 0.05) 25%, rgba(18, 22, 25, 0.3) 100%);
+  z-index: 1;
+}
+
 /* Jen tablet na šířku (48–85.375rem) — PC/notebooky (nad 85.375rem) tímto
    pravidlem vůbec neprocházejí a zůstávají na výchozím nastavení výše.
-   Hero zůstává na celou výšku (100vh, žádný "šev" s další sekcí), ale
-   samotná fotka uvnitř je jen 82vh vysoká a ukotvená nahoře — díky tomu
-   je nad logem mezera. Zbytek pod fotkou vyplní tmavé pozadí shodné s
-   fotkou a jemný gradient dole fotku plynule "rozpustí" do tmy, takže
-   přechod není vidět. */
+   Hero zůstává na celou výšku (100vh, žádný "šev" s další sekcí). Fotka má
+   pevný poměr stran širší než foto samotné, takže na nízkých/krátkých
+   obrazovkách (mobil naležato) přirozeně přeteče a ořízne se dole beze
+   zbytku; na vyšších (tablet) nedosáhne úplně dolů a mezeru pod ní
+   vyplní tmavé pozadí + gradient, který fotku plynule "rozpustí" do tmy
+   (obyčejný gradient místo CSS masky — ta se mezi prohlížeči chovala
+   nespolehlivě). */
 @media (min-width: 48rem) and (max-width: 85.375rem) and (orientation: landscape) {
   .hero {
     background: #121619;
@@ -651,22 +661,24 @@ li,
   .hero-media {
     top: 0;
     bottom: auto;
-    height: 82vh;
+    left: 0;
+    right: 0;
+    height: auto;
+    aspect-ratio: 1.951;
   }
 
   .hero-media img {
-    object-position: 8% 0%;
-    -webkit-mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
+    object-position: 5% 0%;
   }
-}
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(18, 22, 25, 0.55) 0%, rgba(18, 22, 25, 0.05) 25%, rgba(18, 22, 25, 0.3) 100%);
-  z-index: 1;
+  .hero::after {
+    background: linear-gradient(to top,
+      #121619 0%,
+      #121619 15%,
+      rgba(18, 22, 25, 0.55) 20%,
+      rgba(18, 22, 25, 0.05) 40%,
+      rgba(18, 22, 25, 0.3) 100%);
+  }
 }
 
 /* Extrémně pomalý pohyb mraků a jemné "dýchání" světla v horní části hero fotky */
