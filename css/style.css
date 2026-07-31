@@ -656,6 +656,7 @@ li,
 @media (min-width: 48rem) and (max-width: 85.375rem) and (orientation: landscape) {
   .hero {
     background: #121619;
+    min-height: 0;
   }
 
   .hero-media {
@@ -663,8 +664,17 @@ li,
     bottom: auto;
     left: 0;
     right: 0;
-    height: auto;
-    aspect-ratio: 1.951;
+    height: 82vh;
+  }
+
+  /* Prohlížeče s podporou aspect-ratio (naprostá většina) dostanou přesnější
+     poměr založený na šířce fotky místo pevných 82vh — bez toho by starší
+     prohlížeče bez podpory aspect-ratio zůstaly bez výšky vůbec. */
+  @supports (aspect-ratio: 1) {
+    .hero-media {
+      height: auto;
+      aspect-ratio: 1.951;
+    }
   }
 
   .hero-media img {
