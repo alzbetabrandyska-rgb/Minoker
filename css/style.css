@@ -651,10 +651,7 @@ li,
    stran širší než foto samotné, takže na nízkých/krátkých obrazovkách
    (mobil naležato) přirozeně přeteče a ořízne se dole beze zbytku; na
    vyšších (tablet, běžné PC) nedosáhne úplně dolů a mezeru pod ní vyplní
-   tmavé pozadí + gradient, který fotku plynule "rozpustí" do tmy (obyčejný
-   gradient místo CSS masky — ta se mezi prohlížeči chovala nespolehlivě).
-   Na hodně širokých monitorech fotka naopak přeteče a ořízne se dole beze
-   zbytku, stejně jako na krátkém mobilu. */
+   tmavé pozadí. */
 @media (min-width: 48rem) and (orientation: landscape) {
   .hero {
     background: #121619;
@@ -683,13 +680,17 @@ li,
     object-position: 5% 0%;
   }
 
-  .hero::after {
-    background: linear-gradient(to top,
-      #121619 0%,
-      #121619 15%,
-      rgba(18, 22, 25, 0.55) 20%,
-      rgba(18, 22, 25, 0.05) 40%,
-      rgba(18, 22, 25, 0.3) 100%);
+  /* Plynulé zmizení fotky do tmy — vztažené k výšce SAMOTNÉ fotky
+     (.hero-media), ne k výšce celé hero sekce. Fotka má na každé šířce
+     jinou výšku (pevný poměr stran vs. proměnlivá výška obrazovky), takže
+     procenta vztažená k sekci by na jiném poměru stran tmavla uprostřed
+     fotky místo na jejím konci. Vztažením k vlastnímu boxu fotky končí
+     přechod vždy přesně na jejím okraji, ať je poměr stran jakýkoliv. */
+  .hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 80%, #121619 100%);
   }
 }
 
