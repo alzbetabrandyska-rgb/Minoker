@@ -644,16 +644,14 @@ li,
   z-index: 1;
 }
 
-/* Všechny šířky na šířku od 48rem výš (tablet, notebooky, běžné i
-   širokoúhlé PC monitory). Fotka má poměr stran shodný se zdrojovou fotkou
-   (1920 / 1076 = 1.7844) — díky tomu se samotná fotka NIKDY neořezává,
-   jen se na poměrech užších než fotka (tablet) zmenší a nechá nad logem
-   mezerou; na poměrech širších (ultra-širokoúhlé monitory) mírně přeteče
-   dole. Na běžném 16:9 monitoru (1.778) je rozdíl od fotky minimální,
-   takže vypadá prakticky jako originál. Hero sekce zůstává vždy na
-   celou výšku obrazovky (100vh, žádný "šev" s další sekcí) — mezeru pod
-   fotkou vyplní tmavé pozadí. */
-@media (min-width: 48rem) and (orientation: landscape) {
+/* Landscape orientace, libovolná šířka (telefon i desktop) — řízeno jen
+   orientací, ne šířkou, aby širokoúhlá fotka a mezera nad logem platily
+   i na telefonech naležato. Fotka má poměr stran shodný se zdrojovou fotkou
+   (1920 / 1076 = 1.7844) — díky tomu se na běžných i širokoúhlých PC
+   monitorech neořezává prakticky vůbec (louka i nohy vidět celé). Hero
+   sekce zůstává vždy na celou výšku obrazovky (100vh, žádný "šev" s další
+   sekcí) — mezeru pod fotkou vyplní tmavé pozadí. */
+@media (orientation: landscape) {
   .hero {
     background: #121619;
     min-height: 0;
@@ -668,7 +666,7 @@ li,
   }
 
   /* Prohlížeče s podporou aspect-ratio (naprostá většina) dostanou přesnější
-     poměr založený na šířce fotky místo pevných 82vh — bez toho by starší
+     poměr založený na šířce fotky místo pevných 90vh — bez toho by starší
      prohlížeče bez podpory aspect-ratio zůstaly bez výšky vůbec. */
   @supports (aspect-ratio: 1) {
     .hero-media {
@@ -681,34 +679,35 @@ li,
     object-position: 5% 0%;
   }
 
-  /* Plynulé zmizení fotky do tmy — vztažené k výšce SAMOTNÉ fotky
-     (.hero-media), ne k výšce celé hero sekce. Fotka má na každé šířce
-     jinou výšku (pevný poměr stran vs. proměnlivá výška obrazovky), takže
-     procenta vztažená k sekci by na jiném poměru stran tmavla uprostřed
-     fotky místo na jejím konci. Vztažením k vlastnímu boxu fotky končí
-     přechod vždy přesně na jejím okraji, ať je poměr stran jakýkoliv. */
+  /* Jemné ztmavení spodní části fotky — vztažené k výšce SAMOTNÉ fotky
+     (.hero-media), ne k výšce celé hero sekce, takže končí vždy přesně na
+     jejím okraji. Start až od 60 % a max. krytí 0,7, ať zůstanou louka
+     i nohy jasně vidět. */
   .hero-media::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-      transparent 40%,
-      rgba(18, 22, 25, 0.15) 60%,
-      rgba(18, 22, 25, 0.5) 80%,
-      rgba(18, 22, 25, 0.85) 92%,
-      #121619 100%);
+      transparent 60%,
+      rgba(18, 22, 25, 0.35) 80%,
+      rgba(18, 22, 25, 0.7) 100%);
   }
 }
 
-/* Nízké obrazovky na šířku (mobil naležato, výška do 32rem) — poměr
-   fotky shodný se zdrojovou fotkou by tu byl příliš vysoký a přetekl by
-   hodně dolů, takže by bylo vidět jen hlavy/ramena. Kompaktnější poměr
-   ukáže víc trupu, i za cenu menší mezery nad logem. */
-@media (min-width: 48rem) and (max-height: 32rem) and (orientation: landscape) {
+/* Úzké šířky na šířku (mobil naležato, do 56.25rem/900px) — na téhle šířce
+   by poměr 1.7844 dal méně mezery nad logem, než má výšku menu (72px), a
+   logo by s ním splývalo. Razantnější poměr mezeru garantuje; cenou je
+   mírné oříznutí boků fotky (přednost dostává čitelnost loga před viditelností
+   úplně celé fotky). */
+@media (orientation: landscape) and (max-width: 56.25rem) {
   @supports (aspect-ratio: 1) {
     .hero-media {
-      aspect-ratio: 2.05;
+      aspect-ratio: 1.35;
     }
+  }
+
+  .hero-media img {
+    object-position: 15% 0%;
   }
 }
 
