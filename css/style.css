@@ -645,13 +645,14 @@ li,
 }
 
 /* Všechny šířky na šířku od 48rem výš (tablet, notebooky, běžné i
-   širokoúhlé PC monitory) — na poměru stran užším než zdrojová fotka
-   (1.784) je potřeba stejná oprava, ne jen na tabletu. Hero zůstává na
-   celou výšku (100vh, žádný "šev" s další sekcí). Fotka má pevný poměr
-   stran širší než foto samotné, takže na nízkých/krátkých obrazovkách
-   (mobil naležato) přirozeně přeteče a ořízne se dole beze zbytku; na
-   vyšších (tablet, běžné PC) nedosáhne úplně dolů a mezeru pod ní vyplní
-   tmavé pozadí. */
+   širokoúhlé PC monitory). Fotka má poměr stran shodný se zdrojovou fotkou
+   (1920 / 1076 = 1.7844) — díky tomu se samotná fotka NIKDY neořezává,
+   jen se na poměrech užších než fotka (tablet) zmenší a nechá nad logem
+   mezerou; na poměrech širších (ultra-širokoúhlé monitory) mírně přeteče
+   dole. Na běžném 16:9 monitoru (1.778) je rozdíl od fotky minimální,
+   takže vypadá prakticky jako originál. Hero sekce zůstává vždy na
+   celou výšku obrazovky (100vh, žádný "šev" s další sekcí) — mezeru pod
+   fotkou vyplní tmavé pozadí. */
 @media (min-width: 48rem) and (orientation: landscape) {
   .hero {
     background: #121619;
@@ -663,7 +664,7 @@ li,
     bottom: auto;
     left: 0;
     right: 0;
-    height: 82vh;
+    height: 90vh;
   }
 
   /* Prohlížeče s podporou aspect-ratio (naprostá většina) dostanou přesnější
@@ -672,7 +673,7 @@ li,
   @supports (aspect-ratio: 1) {
     .hero-media {
       height: auto;
-      aspect-ratio: 1.951;
+      aspect-ratio: 1.7844;
     }
   }
 
@@ -690,7 +691,24 @@ li,
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 80%, #121619 100%);
+    background: linear-gradient(to bottom,
+      transparent 40%,
+      rgba(18, 22, 25, 0.15) 60%,
+      rgba(18, 22, 25, 0.5) 80%,
+      rgba(18, 22, 25, 0.85) 92%,
+      #121619 100%);
+  }
+}
+
+/* Nízké obrazovky na šířku (mobil naležato, výška do 32rem) — poměr
+   fotky shodný se zdrojovou fotkou by tu byl příliš vysoký a přetekl by
+   hodně dolů, takže by bylo vidět jen hlavy/ramena. Kompaktnější poměr
+   ukáže víc trupu, i za cenu menší mezery nad logem. */
+@media (min-width: 48rem) and (max-height: 32rem) and (orientation: landscape) {
+  @supports (aspect-ratio: 1) {
+    .hero-media {
+      aspect-ratio: 2.05;
+    }
   }
 }
 
