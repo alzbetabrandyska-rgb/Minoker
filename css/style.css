@@ -714,23 +714,6 @@ li,
   }
 }
 
-/* Úzké šířky na šířku (mobil naležato, do 56.25rem/900px) — na téhle šířce
-   by poměr 1.7844 dal méně mezery nad logem, než má výšku menu (72px), a
-   logo by s ním splývalo. Razantnější poměr mezeru garantuje; cenou je
-   mírné oříznutí boků fotky (přednost dostává čitelnost loga před viditelností
-   úplně celé fotky). */
-@media (orientation: landscape) and (max-width: 56.25rem) {
-  @supports (aspect-ratio: 1) {
-    .hero-media {
-      aspect-ratio: 1.35;
-    }
-  }
-
-  .hero-media img {
-    object-position: 15% 0%;
-  }
-}
-
 /* Extrémně pomalý pohyb mraků a jemné "dýchání" světla v horní části hero fotky */
 .hero-parallax {
   position: absolute;
