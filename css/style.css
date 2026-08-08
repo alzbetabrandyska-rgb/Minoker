@@ -644,6 +644,26 @@ li,
   z-index: 1;
 }
 
+/* Velmi "protáhlé" telefony na výšku (poměr šířka/výška ≤ 9/17, tj. výška
+   přesahuje ~1.9× šířku — iPhone XR a novější, Galaxy Z Fold apod.).
+   Portrétní fotka je komponovaná na mírnější poměr (1064/1920 ≈ 0.554) —
+   na těchto extrémně úzkých telefonech by cover musel ořezávat boky natolik,
+   že by mohl uříznout člena kapely nebo část loga. Contain místo toho ukáže
+   fotku vždy celou, nezkrácenou, a prázdný pruh nahoře/dole vyplní tmavá
+   barva laděná s tóny oblohy/skal na fotce. Méně protáhlé telefony (iPhone
+   SE apod., poměr > 9/17) touto podmínkou neprocházejí a zůstávají na
+   současném ořezu (cover), který na nich vypadá dobře. */
+@media (orientation: portrait) and (max-aspect-ratio: 9/17) {
+  .hero {
+    background: #2f3841;
+  }
+
+  .hero-media img {
+    object-fit: contain;
+    object-position: center center;
+  }
+}
+
 /* Landscape orientace, libovolná šířka (telefon i desktop) — řízeno jen
    orientací, ne šířkou, aby širokoúhlá fotka a mezera nad logem platily
    i na telefonech naležato. Fotka má poměr stran shodný se zdrojovou fotkou
