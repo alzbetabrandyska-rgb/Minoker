@@ -714,30 +714,47 @@ li,
   }
 }
 
-/* Mobil naležato (600–900px šířky) — poměr 1.7844 tu dává méně mezery nad
-   logem, než má výšku menu (72px), takže logo s ním splývá (ověřeno na
-   reálných telefonech). Poměr 1.4 dává jasně viditelnou mezeru na 800–900px
-   (pokrývá běžné telefony jako iPhone 13 mini ~812px, Redmi Note 8T
-   ~850px); pod ~750px mezera pořád není plná (matematický strop — nižší
-   poměr by už výrazně ořezával postavy). Zatím neřešeno, viz poznámka níže.
-   Cena: viditelná výška fotky klesá z ~83 % na ~65 % (víc oříznutých nohou). */
+/* Mobil naležato (600–900px šířky) — žádné ladění aspect-ratio čísel.
+   Fotka se nikdy neořezává (object-fit: contain — vždy zobrazí celou
+   fotku i logo, jen zmenšenou tak, aby se vešla; na tomhle poměru stran
+   obrazovky vzniknou prázdné pruhy po stranách, ne nahoře/dole). Pevná
+   rezerva 30px nahoře (padding-top na .hero-media, nezávislá na jakémkoli
+   výpočtu) garantuje odstup od menu bez ohledu na to, jak přesně fotka
+   vyjde — v kombinaci s přirozenou mezerou nad logem uvnitř samotné fotky
+   dá dohromady ~72px, tedy prakticky přesně výšku menu (ověřeno výpočtem
+   i na reálném rozlišení 812×375). Fotka se kvůli rezervě zmenší jen
+   nepatrně (~8 %) — contain nikdy nic neořezává, takže postavy zůstávají
+   prakticky celé. */
 @media (orientation: landscape) and (max-width: 56.25rem) {
+  .hero {
+    background: #2f3841;
+  }
+
+  .hero-media {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    padding-top: 30px;
+    box-sizing: border-box;
+  }
+
   @supports (aspect-ratio: 1) {
     .hero-media {
-      aspect-ratio: 1.4;
+      aspect-ratio: unset;
     }
   }
 
   .hero-media img {
-    object-position: 12% 0%;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .hero-media::after {
+    content: none;
   }
 }
-
-/* TODO (vědomě odloženo, není priorita): telefony naležato pod ~750px
-   šířky (např. iPhone SE ~667px) nemají ani s poměrem 1.4 nad logem plnou
-   mezeru od menu — matematicky by to vyžadovalo poměr blízko 0.9, což by
-   už drasticky ořízlo postavy. Bude potřeba samostatné řešení jen pro
-   tohle úzké pásmo. */
 
 /* Extrémně pomalý pohyb mraků a jemné "dýchání" světla v horní části hero fotky */
 .hero-parallax {
