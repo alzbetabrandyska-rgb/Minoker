@@ -717,14 +717,13 @@ li,
 /* Mobil naležato (600–900px šířky) — žádné ladění aspect-ratio čísel.
    Fotka se nikdy neořezává (object-fit: contain — vždy zobrazí celou
    fotku i logo, jen zmenšenou tak, aby se vešla; na tomhle poměru stran
-   obrazovky vzniknou prázdné pruhy po stranách, ne nahoře/dole). Pevná
-   rezerva 30px nahoře (padding-top na .hero-media, nezávislá na jakémkoli
-   výpočtu) garantuje odstup od menu bez ohledu na to, jak přesně fotka
-   vyjde — v kombinaci s přirozenou mezerou nad logem uvnitř samotné fotky
-   dá dohromady ~72px, tedy prakticky přesně výšku menu (ověřeno výpočtem
-   i na reálném rozlišení 812×375). Fotka se kvůli rezervě zmenší jen
-   nepatrně (~8 %) — contain nikdy nic neořezává, takže postavy zůstávají
-   prakticky celé. */
+   obrazovky vzniknou prázdné pruhy po stranách, ne nahoře/dole). Rezerva
+   nahoře (padding-top) je nastavená přímo na --header-height (výšku
+   menu), ne na odhadnuté číslo — mezera nad FOTKOU je tedy vždy GARANTOVANĚ
+   minimálně stejná jako menu, bez ohledu na to, kolik místa je nad logem
+   uvnitř samotné fotky (to je čistý bonus navíc, ne součást výpočtu).
+   Fotka se kvůli rezervě zmenší jen nepatrně — contain nikdy nic
+   neořezává, takže postavy zůstávají prakticky celé. */
 @media (orientation: landscape) and (max-width: 56.25rem) {
   .hero {
     background: #2f3841;
@@ -736,7 +735,7 @@ li,
     left: 0;
     right: 0;
     height: auto;
-    padding-top: 30px;
+    padding-top: var(--header-height);
     box-sizing: border-box;
   }
 
