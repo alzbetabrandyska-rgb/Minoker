@@ -718,9 +718,9 @@ li,
    Fotka se nikdy neořezává (object-fit: contain — vždy zobrazí celou
    fotku i logo, jen zmenšenou tak, aby se vešla; na tomhle poměru stran
    obrazovky vzniknou prázdné pruhy po stranách, ne nahoře/dole). Rezerva
-   nahoře (padding-top) je nastavená přímo na --header-height (výšku
-   menu), ne na odhadnuté číslo — mezera nad FOTKOU je tedy vždy GARANTOVANĚ
-   minimálně stejná jako menu, bez ohledu na to, kolik místa je nad logem
+   nahoře (padding-top) je odvozená přímo z --header-height (poloviny výšky
+   menu), ne z odhadnutého čísla — mezera nad FOTKOU je tedy vždy
+   GARANTOVANĚ minimálně 36px, bez ohledu na to, kolik místa je nad logem
    uvnitř samotné fotky (to je čistý bonus navíc, ne součást výpočtu).
    Fotka se kvůli rezervě zmenší jen nepatrně — contain nikdy nic
    neořezává, takže postavy zůstávají prakticky celé. */
@@ -735,7 +735,7 @@ li,
     left: 0;
     right: 0;
     height: auto;
-    padding-top: var(--header-height);
+    padding-top: calc(var(--header-height) / 2);
     box-sizing: border-box;
   }
 
