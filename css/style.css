@@ -717,13 +717,12 @@ li,
 /* Mobil naležato (600–900px šířky) — žádné ladění aspect-ratio čísel.
    Fotka se nikdy neořezává (object-fit: contain — vždy zobrazí celou
    fotku i logo, jen zmenšenou tak, aby se vešla; na tomhle poměru stran
-   obrazovky vzniknou prázdné pruhy po stranách, ne nahoře/dole). Rezerva
-   nahoře (padding-top) je odvozená přímo z --header-height (poloviny výšky
-   menu), ne z odhadnutého čísla — mezera nad FOTKOU je tedy vždy
-   GARANTOVANĚ minimálně 36px, bez ohledu na to, kolik místa je nad logem
-   uvnitř samotné fotky (to je čistý bonus navíc, ne součást výpočtu).
-   Fotka se kvůli rezervě zmenší jen nepatrně — contain nikdy nic
-   neořezává, takže postavy zůstávají prakticky celé. */
+   obrazovky vzniknou prázdné pruhy po stranách, ne nahoře/dole). Nápis
+   "MINOKER" je v podkladové fotce nakloněný/obloukovitý — písmeno "R" na
+   konci je o cca 52px výš (blíž hornímu okraji fotky) než "M" na začátku
+   (změřeno přímo v pixelech fotky). Pevných 48px pádding-top garantuje
+   bezpečnou mezeru i pro ten nejkritičtější bod (R) na běžných landscape
+   šířkách mobilu, s malou rezervou navíc (M pak má mezeru ještě větší). */
 @media (orientation: landscape) and (max-width: 56.25rem) {
   .hero {
     background: #2f3841;
@@ -735,7 +734,7 @@ li,
     left: 0;
     right: 0;
     height: auto;
-    padding-top: calc(var(--header-height) / 2);
+    padding-top: 48px;
     box-sizing: border-box;
   }
 
