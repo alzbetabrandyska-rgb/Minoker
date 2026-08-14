@@ -898,6 +898,11 @@ li,
   pointer-events: none;
   user-select: none;
   z-index: 0;
+  transition: transform 0.7s ease;
+}
+
+.about:hover .about-watermark {
+  transform: translate(-50%, -50%) scale(1.06);
 }
 
 .about .container {
@@ -1245,6 +1250,47 @@ li,
 .lightbox-close:focus-visible {
   color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: rgba(10, 12, 14, 0.6);
+  font-size: 1.25rem;
+  color: var(--color-text);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.lightbox-nav:hover,
+.lightbox-nav:focus-visible {
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.lightbox-prev {
+  left: var(--space-2);
+}
+
+.lightbox-next {
+  right: var(--space-2);
+}
+
+@media (min-width: 48rem) {
+  .lightbox-prev {
+    left: var(--space-4);
+  }
+
+  .lightbox-next {
+    right: var(--space-4);
+  }
 }
 
 /* ---------- 11. FAQ / akordeon ---------- */

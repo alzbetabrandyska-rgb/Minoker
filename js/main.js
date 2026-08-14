@@ -113,12 +113,23 @@
   const lightbox = document.querySelector("[data-lightbox]");
   const lightboxImg = lightbox?.querySelector("img");
   const lightboxClose = lightbox?.querySelector(".lightbox-close");
+  const lightboxPrev = lightbox?.querySelector(".lightbox-prev");
+  const lightboxNext = lightbox?.querySelector(".lightbox-next");
+  const galleryImages = Array.from(document.querySelectorAll(".gallery-item img"));
   let lastFocused = null;
+  let currentIndex = -1;
 
-  const openLightbox = (src, alt) => {
+  const showImage = (index) => {
+    if (!lightboxImg || !galleryImages.length) return;
+    currentIndex = (index + galleryImages.length) % galleryImages.length;
+    const img = galleryImages[currentIndex];
+    lightboxImg.src = img.currentSrc || img.src;
+    lightboxImg.alt = img.alt || "";
+  };
+
+  const openLightbox = (index) => {
     if (!lightbox || !lightboxImg) return;
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || "";
+    showImage(index);
     lightbox.classList.add("is-open");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -134,19 +145,21 @@
     if (lastFocused instanceof HTMLElement) lastFocused.focus();
   };
 
-  document.querySelectorAll(".gallery-item").forEach((item) => {
-    item.addEventListener("click", () => {
-      const img = item.querySelector("img");
-      if (img) openLightbox(img.currentSrc || img.src, img.alt);
-    });
+  galleryImages.forEach((img, index) => {
+    img.closest(".gallery-item")?.addEventListener("click", () => openLightbox(index));
   });
 
   lightboxClose?.addEventListener("click", closeLightbox);
+  lightboxPrev?.addEventListener("click", () => showImage(currentIndex - 1));
+  lightboxNext?.addEventListener("click", () => showImage(currentIndex + 1));
   lightbox?.addEventListener("click", (event) => {
     if (event.target === lightbox) closeLightbox();
   });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && lightbox?.classList.contains("is-open")) closeLightbox();
+    if (!lightbox?.classList.contains("is-open")) return;
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowLeft") showImage(currentIndex - 1);
+    if (event.key === "ArrowRight") showImage(currentIndex + 1);
   });
 
   /* ---------- Reveal animace při scrollu ---------- */
