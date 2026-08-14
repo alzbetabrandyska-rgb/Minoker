@@ -905,6 +905,14 @@ li,
   transform: translate(-50%, -50%) scale(1.06);
 }
 
+/* Na tabletu (768–1024px) je 92vw vůči šířce sekce příliš velké, zvlášť
+   spolu se zoom efektem při najetí myší — o něco kompaktnější rozměr. */
+@media (min-width: 48rem) and (max-width: 64rem) {
+  .about-watermark {
+    width: min(44rem, 74vw);
+  }
+}
+
 .about .container {
   position: relative;
   z-index: 1;
