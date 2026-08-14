@@ -901,15 +901,19 @@ li,
   transition: transform 0.7s ease;
 }
 
-.about:hover .about-watermark {
-  transform: translate(-50%, -50%) scale(1.06);
+/* Zoom efekt jen tam, kde reálně existuje myš/kurzor (hover) — na dotykových
+   zařízeních (tablet, mobil) "najetí" nedává smysl a efekt se nespustí. */
+@media (hover: hover) and (pointer: fine) {
+  .about:hover .about-watermark {
+    transform: translate(-50%, -50%) scale(1.06);
+  }
 }
 
-/* Na tabletu (768–1024px) je 92vw vůči šířce sekce příliš velké, zvlášť
-   spolu se zoom efektem při najetí myší — o něco kompaktnější rozměr. */
+/* Na tabletu (768–1024px) je 92vw vůči šířce sekce příliš velké — logo má
+   vypadat kompaktně, s odstupem od okrajů/textu, podobně jako na desktopu. */
 @media (min-width: 48rem) and (max-width: 64rem) {
   .about-watermark {
-    width: min(44rem, 74vw);
+    width: min(26rem, 50vw);
   }
 }
 
