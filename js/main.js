@@ -123,7 +123,7 @@
     if (!lightboxImg || !galleryImages.length) return;
     currentIndex = (index + galleryImages.length) % galleryImages.length;
     const img = galleryImages[currentIndex];
-    lightboxImg.src = img.currentSrc || img.src;
+    lightboxImg.src = img.dataset.full || img.currentSrc || img.src;
     lightboxImg.alt = img.alt || "";
   };
 
